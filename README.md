@@ -11,7 +11,7 @@ Static editorial starter for [actuallyworthit.com](https://actuallyworthit.com).
 
 ## Affiliate links
 
-Buttons use `href="#"` and `data-asin="..."`. When you have an Amazon Associates ID, replace `#` with tagged `https://www.amazon.com/dp/ASIN?tag=YOURTAG-20` (or your preferred short-link pattern).
+Buy buttons use `https://www.amazon.com/dp/ASIN?tag=actuallywo08c-20` from each page’s existing `data-asin`.
 
 ## Editorial rules used here
 
