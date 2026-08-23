@@ -1,21 +1,21 @@
 :root {
-  --paper: #f3efe4;
-  --paper-2: #faf7ef;
-  --ink: #12110e;
-  --ink-soft: #2a2722;
-  --muted: #5e584e;
-  --line: #d4cdc0;
-  --line-strong: #b9b0a0;
+  --paper: #f4f3ee;
+  --paper-2: #fff;
+  --ink: #0e0d0b;
+  --ink-soft: #26241f;
+  --muted: #5a564e;
+  --line: #d9d5cc;
+  --line-strong: #b7b2a7;
   --accent: #9b311c;
   --accent-deep: #7a2414;
   --forest: #1e3a2f;
   --ochre: #8a5a12;
-  --mast: #12110e;
-  --mast-ink: #f3efe4;
-  --mast-muted: #b8b0a2;
-  --cover-ink: #171513;
-  --cover-brick: #7f2e1d;
-  --cover-forest: #1a3229;
+  --mast: #0e0d0b;
+  --mast-ink: #f4f3ee;
+  --mast-muted: #b4aea3;
+  --cover-ink: #141310;
+  --cover-brick: #7a2b1b;
+  --cover-forest: #173028;
   --max: 40.5rem;
   --wide: 72rem;
   --gutter: clamp(1rem, 3vw, 1.75rem);
@@ -188,7 +188,8 @@ nav.links a[aria-current="page"] {
 .menu-btn-bars::after { top: 5px; }
 
 .ticker {
-  border-top: 1px solid #2c2924;
+  border-top: 1px solid #2a2722;
+  background: #181714;
   font-family: var(--sans);
   font-size: 0.68rem;
   letter-spacing: 0.12em;
@@ -247,7 +248,7 @@ h3 { font-size: 1.05rem; }
 /* —— Homepage hero —— */
 .hero {
   padding: clamp(2.4rem, 6vw, 4.6rem) 0 clamp(2rem, 5vw, 3.4rem);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 4px double var(--ink);
 }
 
 .hero-grid {
@@ -331,6 +332,7 @@ h3 { font-size: 1.05rem; }
   color: var(--paper);
   background: var(--cover-ink);
   text-decoration: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
 }
 
 .cover-cat,
@@ -381,6 +383,8 @@ h3 { font-size: 1.05rem; }
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1.25rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--ink);
 }
 
 .section-head h2 {
@@ -415,6 +419,7 @@ h3 { font-size: 1.05rem; }
   min-height: 100%;
   transition: border-color 0.16s ease, transform 0.16s ease;
 }
+.card:not(:has(.cover)) { border-top: 3px solid var(--ink); }
 
 .card:hover {
   border-color: var(--ink);
@@ -466,7 +471,7 @@ h3 { font-size: 1.05rem; }
 
 .review-hero {
   padding: clamp(1.8rem, 4vw, 3rem) 0 1.4rem;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 4px double var(--ink);
 }
 
 .crumbs {
@@ -487,7 +492,12 @@ h3 { font-size: 1.05rem; }
   display: grid;
   gap: 1.75rem;
   padding-top: 1.75rem;
+  grid-template-areas:
+    "aside"
+    "body";
 }
+.review-body { grid-area: body; }
+.review-aside { grid-area: aside; }
 
 .disclosure {
   background: #ebe4d4;
@@ -501,18 +511,21 @@ h3 { font-size: 1.05rem; }
 }
 
 .buybox {
-  border: 1px solid var(--line);
+  border: 1px solid var(--ink);
   background: var(--paper-2);
-  padding: 1.15rem 1.2rem 1.25rem;
+  padding: 0 0 1.15rem;
   margin: 0 0 1rem;
 }
 
 .buybox strong {
   display: block;
   font-family: var(--serif);
-  font-size: 1.15rem;
+  font-size: 1.08rem;
   letter-spacing: -0.02em;
-  margin-bottom: 0.4rem;
+  margin: 0 0 0.85rem;
+  padding: 0.75rem 1.15rem;
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .buybox span {
@@ -520,15 +533,16 @@ h3 { font-size: 1.05rem; }
   font-family: var(--sans);
   font-size: 0.84rem;
   color: var(--muted);
+  margin: 0 1.15rem;
 }
 
-.buybox .btn { margin-top: 0.9rem; width: 100%; }
+.buybox .btn { margin: 0.9rem 1.15rem 0; width: calc(100% - 2.3rem); }
 
 .note {
   font-family: var(--sans);
   font-size: 0.75rem;
   color: var(--muted);
-  margin: 0.55rem 0 0;
+  margin: 0.55rem 1.15rem 0;
   line-height: 1.45;
 }
 
@@ -735,6 +749,7 @@ footer.site a:hover { color: #fff; }
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
   .grid-4 { grid-template-columns: repeat(4, 1fr); }
   .review-layout {
+    grid-template-areas: "body aside";
     grid-template-columns: minmax(0, 1fr) 19.5rem;
     gap: 2.6rem;
     align-items: start;
