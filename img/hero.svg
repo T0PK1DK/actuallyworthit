@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">Abstract dusk landscape</title>
+  <desc id="heroDesc">Original editorial illustration: warm dusk sky over dark ridgelines with faint concentric rings. Not a photograph of a real place or product.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="0.9">
+      <stop offset="0%" stop-color="#140e0c"/>
+      <stop offset="40%" stop-color="#3b1f16"/>
+      <stop offset="72%" stop-color="#8f4024"/>
+      <stop offset="100%" stop-color="#d46832"/>
+    </linearGradient>
+    <linearGradient id="land" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c100c"/>
+      <stop offset="100%" stop-color="#0a0706"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="38%" r="38%">
+      <stop offset="0%" stop-color="#f0a36a" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#c45a2a" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#c45a2a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.18"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <g fill="none" stroke="#f3d2b4" stroke-opacity="0.16" stroke-width="1.2">
+    <circle cx="1180" cy="310" r="90"/>
+    <circle cx="1180" cy="310" r="160"/>
+    <circle cx="1180" cy="310" r="240"/>
+    <circle cx="1180" cy="310" r="330"/>
+    <circle cx="1180" cy="310" r="430"/>
+  </g>
+  <path d="M0 560 C 180 520, 320 610, 500 580 C 680 548, 820 500, 1000 540 C 1180 580, 1360 500, 1600 530 L 1600 900 L 0 900 Z" fill="#1a110e" opacity="0.55"/>
+  <path d="M0 620 C 220 590, 380 680, 560 650 C 760 616, 920 560, 1120 610 C 1300 652, 1450 600, 1600 630 L 1600 900 L 0 900 Z" fill="url(#land)"/>
+  <path d="M0 720 C 260 700, 480 760, 740 730 C 980 702, 1240 760, 1600 720 L 1600 900 L 0 900 Z" fill="#0b0706"/>
+  <rect width="1600" height="900" filter="url(#grain)"/>
+</svg>
