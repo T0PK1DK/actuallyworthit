@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>About — Actually Worth It</title>
   <meta name="description" content="How we research products and how Amazon Associates commissions work.">
   <style>
     html{background:#f3f4f1}
     body{margin:0;color:#141210;font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;line-height:1.6}
-    .skip{position:absolute;left:20px;top:-80px;background:#141210;color:#fff;padding:.5rem .75rem;z-index:50;text-decoration:none}
-    .skip:focus{top:12px}
+    .skip-link{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .skip-link:focus{clip:auto;width:auto;height:auto;left:16px;top:12px;background:#141210;color:#fff;padding:.5rem .75rem;z-index:50;text-decoration:none}
     img{max-width:100%;height:auto;display:block}
     a{color:inherit}
   </style>
@@ -23,12 +23,12 @@
   </noscript>
 </head>
 <body>
-  <a class="skip" href="#content">Skip to content</a>
+  <a class="skip-link" href="#content">Skip to content</a>
   <header class="masthead">
     <div class="wrap masthead-bar">
       <a class="wordmark" href="/">actually worth it</a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <span class="menu-bars" aria-hidden="true"><span></span></span>
+        <span class="menu-bars" aria-hidden="true"></span>
       </button>
       <nav class="site-nav" id="site-nav">
         <a href="/#latest">Latest</a>

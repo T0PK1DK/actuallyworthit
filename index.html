@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Actually Worth It — honest mid-ticket electronics reviews</title>
   <meta name="description" content="Editorial reviews of earbuds, headphones, GPS, and speakers. Affiliate links disclosed. Not a store.">
   <style>
     html{background:#f3f4f1}
     body{margin:0;color:#141210;font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;line-height:1.6}
-    .skip{position:absolute;left:20px;top:-80px;background:#141210;color:#fff;padding:.5rem .75rem;z-index:50;text-decoration:none}
-    .skip:focus{top:12px}
+    .skip-link{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    .skip-link:focus{clip:auto;width:auto;height:auto;left:16px;top:12px;background:#141210;color:#fff;padding:.5rem .75rem;z-index:50;text-decoration:none}
     img{max-width:100%;height:auto;display:block}
     a{color:inherit}
   </style>
@@ -23,12 +23,12 @@
   </noscript>
 </head>
 <body>
-  <a class="skip" href="#latest">Skip to latest reviews</a>
+  <a class="skip-link" href="#latest">Skip to latest reviews</a>
   <header class="masthead">
     <div class="wrap masthead-bar">
       <a class="wordmark" href="/">actually worth it</a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <span class="menu-bars" aria-hidden="true"><span></span></span>
+        <span class="menu-bars" aria-hidden="true"></span>
       </button>
       <nav class="site-nav" id="site-nav">
         <a href="/#latest">Latest</a>
@@ -53,8 +53,8 @@
   <section class="wrap featured" id="latest" aria-labelledby="featured-title">
     <a class="feature-card" href="/reviews/sony-vs-bose-earbuds.html">
       <div class="feature-photos">
-        <img src="/img/products/sony-wf-1000xm5.jpg" width="1500" height="1260" alt="Sony WF-1000XM5 wireless earbuds in black, Amazon product photo">
-        <img src="/img/products/bose-qc-ultra-earbuds.jpg" width="934" height="1160" alt="Bose QuietComfort Ultra Earbuds (2nd Gen) in black, Amazon product photo">
+        <img fetchpriority="high" decoding="async" src="/img/products/sony-wf-1000xm5.jpg" width="1500" height="1260" alt="Sony WF-1000XM5 wireless earbuds in black, Amazon product photo">
+        <img decoding="async" src="/img/products/bose-qc-ultra-earbuds.jpg" width="934" height="1160" alt="Bose QuietComfort Ultra Earbuds (2nd Gen) in black, Amazon product photo">
       </div>
       <div class="feature-body">
         <p class="kicker">Featured comparison</p>
@@ -74,7 +74,7 @@
         <li class="card">
           <a href="/reviews/sony-wf-1000xm5.html">
             <div class="card-media">
-              <img src="/img/products/sony-wf-1000xm5.jpg" width="1500" height="1260" alt="Sony WF-1000XM5 true wireless earbuds in black, Amazon product photo">
+              <img loading="lazy" decoding="async" src="/img/products/sony-wf-1000xm5.jpg" width="1500" height="1260" alt="Sony WF-1000XM5 true wireless earbuds in black, Amazon product photo">
             </div>
             <div class="card-body">
               <p class="card-cat">Earbuds</p>
@@ -87,7 +87,7 @@
         <li class="card">
           <a href="/reviews/sony-wf-1000xm6.html">
             <div class="card-media">
-              <img src="/img/products/sony-wf-1000xm6.jpg" width="800" height="800" alt="Sony WF-1000XM6 earbuds and charging case in platinum silver, Amazon product photo">
+              <img loading="lazy" decoding="async" src="/img/products/sony-wf-1000xm6.jpg" width="800" height="800" alt="Sony WF-1000XM6 earbuds and charging case in platinum silver, Amazon product photo">
             </div>
             <div class="card-body">
               <p class="card-cat">Earbuds</p>
@@ -100,7 +100,7 @@
         <li class="card">
           <a href="/reviews/bose-qc-ultra-earbuds-2nd-gen.html">
             <div class="card-media">
-              <img src="/img/products/bose-qc-ultra-earbuds.jpg" width="934" height="1160" alt="Bose QuietComfort Ultra Earbuds 2nd Gen in black, Amazon product photo">
+              <img loading="lazy" decoding="async" src="/img/products/bose-qc-ultra-earbuds.jpg" width="934" height="1160" alt="Bose QuietComfort Ultra Earbuds 2nd Gen in black, Amazon product photo">
             </div>
             <div class="card-body">
               <p class="card-cat">Earbuds</p>
@@ -113,7 +113,7 @@
         <li class="card">
           <a href="/reviews/sony-vs-bose-earbuds.html">
             <div class="card-media">
-              <img src="/img/products/sony-wf-1000xm5.jpg" width="1500" height="1260" alt="Sony WF-1000XM5 earbuds used in the Sony vs Bose comparison">
+              <img loading="lazy" decoding="async" src="/img/products/sony-wf-1000xm5.jpg" width="1500" height="1260" alt="Sony WF-1000XM5 earbuds used in the Sony vs Bose comparison">
             </div>
             <div class="card-body">
               <p class="card-cat">Comparison</p>
@@ -134,7 +134,7 @@
         <li class="card">
           <a href="/reviews/sony-wh-1000xm5.html">
             <div class="card-media">
-              <img src="/img/products/sony-wh-1000xm5.jpg" width="976" height="1500" alt="Sony WH-1000XM5 over-ear headphones in black, Amazon product photo">
+              <img loading="lazy" decoding="async" src="/img/products/sony-wh-1000xm5.jpg" width="976" height="1500" alt="Sony WH-1000XM5 over-ear headphones in black, Amazon product photo">
             </div>
             <div class="card-body">
               <p class="card-cat">Headphones</p>
@@ -147,7 +147,7 @@
         <li class="card">
           <a href="/reviews/bose-qc-ultra-headphones.html">
             <div class="card-media">
-              <img src="/img/products/bose-qc-ultra-headphones.jpg" width="905" height="1122" alt="Bose QuietComfort Ultra Headphones in black, Amazon product photo">
+              <img loading="lazy" decoding="async" src="/img/products/bose-qc-ultra-headphones.jpg" width="905" height="1122" alt="Bose QuietComfort Ultra Headphones in black, Amazon product photo">
             </div>
             <div class="card-body">
               <p class="card-cat">Headphones</p>
@@ -160,7 +160,7 @@
         <li class="card">
           <a href="/reviews/sony-vs-bose-headphones.html">
             <div class="card-media">
-              <img src="/img/products/bose-qc-ultra-headphones.jpg" width="905" height="1122" alt="Bose QuietComfort Ultra Headphones used in the Sony vs Bose comparison">
+              <img loading="lazy" decoding="async" src="/img/products/bose-qc-ultra-headphones.jpg" width="905" height="1122" alt="Bose QuietComfort Ultra Headphones used in the Sony vs Bose comparison">
             </div>
             <div class="card-body">
               <p class="card-cat">Comparison</p>
@@ -181,7 +181,7 @@
         <li class="card">
           <a href="/reviews/jbl-charge-6.html">
             <div class="card-media">
-              <img src="/img/products/jbl-charge-6.jpg" width="1369" height="745" alt="JBL Charge 6 portable speaker in white, Amazon product photo">
+              <img loading="lazy" decoding="async" src="/img/products/jbl-charge-6.jpg" width="1369" height="745" alt="JBL Charge 6 portable speaker in white, Amazon product photo">
             </div>
             <div class="card-body">
               <p class="card-cat">Speaker</p>
@@ -194,7 +194,7 @@
         <li class="card">
           <a href="/reviews/bose-soundlink-flex-2nd-gen.html">
             <div class="card-media">
-              <img src="/img/products/bose-soundlink-flex.jpg" width="1500" height="1102" alt="Bose SoundLink Flex 2nd Gen portable speaker in black, Amazon product photo">
+              <img loading="lazy" decoding="async" src="/img/products/bose-soundlink-flex.jpg" width="1500" height="1102" alt="Bose SoundLink Flex 2nd Gen portable speaker in black, Amazon product photo">
             </div>
             <div class="card-body">
               <p class="card-cat">Speaker</p>
@@ -215,7 +215,7 @@
         <li class="card">
           <a href="/reviews/garmin-gpsmap-67i.html">
             <div class="card-media">
-              <img src="/img/products/garmin-gpsmap-67i.jpg" width="828" height="1500" alt="Garmin GPSMAP 67i handheld GPS with inReach, Amazon product photo">
+              <img loading="lazy" decoding="async" src="/img/products/garmin-gpsmap-67i.jpg" width="828" height="1500" alt="Garmin GPSMAP 67i handheld GPS with inReach, Amazon product photo">
             </div>
             <div class="card-body">
               <p class="card-cat">GPS</p>
@@ -228,7 +228,7 @@
         <li class="card">
           <a href="/reviews/garmin-inreach-mini-2.html">
             <div class="card-media">
-              <img src="/img/products/garmin-inreach-mini-2.jpg" width="991" height="1500" alt="Garmin inReach Mini 2 satellite communicator in black, Amazon product photo">
+              <img loading="lazy" decoding="async" src="/img/products/garmin-inreach-mini-2.jpg" width="991" height="1500" alt="Garmin inReach Mini 2 satellite communicator in black, Amazon product photo">
             </div>
             <div class="card-body">
               <p class="card-cat">GPS</p>
@@ -241,7 +241,7 @@
         <li class="card">
           <a href="/reviews/garmin-67i-vs-inreach-mini-2.html">
             <div class="card-media">
-              <img src="/img/products/garmin-gpsmap-67i.jpg" width="828" height="1500" alt="Garmin GPSMAP 67i used in the 67i vs inReach Mini 2 comparison">
+              <img loading="lazy" decoding="async" src="/img/products/garmin-gpsmap-67i.jpg" width="828" height="1500" alt="Garmin GPSMAP 67i used in the 67i vs inReach Mini 2 comparison">
             </div>
             <div class="card-body">
               <p class="card-cat">Comparison</p>
