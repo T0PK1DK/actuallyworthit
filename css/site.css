@@ -9,7 +9,7 @@
   --accent: #0d4f48;
   --accent-hover: #0a3d38;
   --photo: #f7f7f4;
-  --pad: 1.4rem;
+  --pad: 1.5rem;
   --wide: 72rem;
   --max: 40rem;
   --tap: 2.75rem;
@@ -266,20 +266,20 @@ a:hover { color: var(--ink); }
 }
 .feature-photos img {
   width: 100%;
-  height: 9.25rem;
-  object-fit: contain;
+  height: 8rem;
+  object-fit: cover;
   object-position: center;
-  padding: 0.7rem;
+  padding: 0;
   background: var(--photo);
 }
-.feature-body { padding: 1.25rem 1.2rem 1.4rem; }
+.feature-body { padding: 1rem 1.1rem 1.15rem; }
 .feature-body h2 {
   font-family: var(--sans);
   font-weight: 700;
-  font-size: clamp(1.45rem, 5.5vw, 2rem);
-  line-height: 1.15;
+  font-size: clamp(1.28rem, 5vw, 2rem);
+  line-height: 1.2;
   letter-spacing: -0.03em;
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.5rem;
 }
 .deck {
   font-family: var(--serif);
@@ -351,9 +351,9 @@ a:hover { color: var(--ink); }
 .card-media img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  padding: 0.55rem;
+  padding: 0;
 }
 .card-body {
   padding: 0.7rem 0.85rem 0.65rem 0.7rem;
@@ -414,7 +414,7 @@ a:hover { color: var(--ink); }
 
 /* Review article */
 .review { padding: 1.5rem 0 3.5rem; }
-.review-head { padding: 0.15rem 0 0.35rem; }
+.review-head { padding: 0.45rem 0 0.5rem; }
 .review h1 {
   font-family: var(--sans);
   font-weight: 700;
@@ -436,10 +436,10 @@ a:hover { color: var(--ink); }
 .product-shot img,
 .product-pair img {
   width: 100%;
-  height: 15.5rem;
-  object-fit: contain;
+  height: 11.25rem;
+  object-fit: cover;
   object-position: center;
-  padding: 0.85rem;
+  padding: 0;
   background: var(--photo);
 }
 .product-shot figcaption,
@@ -523,11 +523,11 @@ a:hover { color: var(--ink); }
 .buy-thumb {
   width: 5.5rem;
   height: 5.5rem;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   background: var(--photo);
   border-radius: 0.55rem;
-  padding: 0.35rem;
+  padding: 0;
 }
 .buybox strong,
 .buy-row-name {
@@ -764,7 +764,7 @@ footer.site strong { color: var(--ink); font-weight: 600; }
     min-height: 0;
   }
   .card-media { aspect-ratio: 1; }
-  .card-media img { padding: 1rem; }
+  .card-media img { padding: 0; object-fit: cover; }
   .card-body { padding: 1rem 1.05rem 1.15rem; }
   .card-body h3 { font-size: 1.2rem; margin: 0 0 0.4rem; }
   .card-dek {
@@ -776,7 +776,7 @@ footer.site strong { color: var(--ink); font-weight: 600; }
   }
   .product-pair { grid-template-columns: 1fr 1fr; }
   .product-shot img,
-  .product-pair img { height: 20rem; padding: 1.1rem; }
+  .product-pair img { height: 20rem; padding: 0; object-fit: cover; }
   .split { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
   .buy-row { flex-direction: row; justify-content: space-between; align-items: center; }
   .buy-dock-note {
@@ -794,7 +794,7 @@ footer.site strong { color: var(--ink); font-weight: 600; }
   .has-dock .buy-panel .btn { display: inline-flex; }
   body.has-dock { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px)); }
   .featured { padding: 2.25rem 0 0.75rem; }
-  .feature-photos img { height: 16rem; }
+  .feature-photos img { height: 16rem; object-fit: cover; padding: 0; }
   .desks { padding: 2.25rem 0 1.5rem; }
 }
 
