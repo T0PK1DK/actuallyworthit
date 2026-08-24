@@ -7,50 +7,212 @@
   <meta name="description" content="Editorial reviews of earbuds, headphones, GPS, and speakers. Affiliate links disclosed. Not a store.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,650&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-    <header class="site">
-      <div class="wrap nav">
-        <a class="brand" href="index.html">Actually <span>Worth It</span></a>
-        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="navlinks">Menu</button>
-        <nav class="links" id="navlinks">
-          <a href="index.html">Home</a>
-          <a href="index.html#latest">Reviews</a>
-          <a href="about.html">About</a>
-        </nav>
-      </div>
-    </header>
+  <a class="skip" href="#latest">Skip to latest reviews</a>
+  <header class="masthead masthead-on-hero">
+    <div class="wrap masthead-inner">
+      <a class="wordmark" href="index.html">actually worth it</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="navlinks">Menu</button>
+      <nav class="primary-nav" id="navlinks">
+        <a href="index.html#latest">Latest</a>
+        <a href="index.html#earbuds">Earbuds</a>
+        <a href="index.html#headphones">Headphones</a>
+        <a href="index.html#speakers">Speakers</a>
+        <a href="index.html#gps">GPS</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
 <main>
-  <section class="hero">
-    <div class="wrap prose">
+  <section class="hero" aria-label="Cover">
+    <div class="hero-copy">
       <p class="kicker">Honest reviews of mid-ticket electronics</p>
       <h1>Is it actually worth it?</h1>
       <p class="lede">We write Wirecutter-ish reviews of earbuds, headphones, GPS, and portable speakers in the $100-and-up range — not giant TVs, not a fake storefront. If a product is only “worth it” for some people, we say so.</p>
+      <p class="byline">Sourced draft reviews · Not a store</p>
     </div>
   </section>
-  <section class="wrap" id="latest">
-    <p class="kicker" style="padding-top:2rem">Latest reviews</p>
-    <div class="grid">
-      <a class="card" href="reviews/sony-wf-1000xm5.html"><div class="cat">Earbuds</div><h2>Sony WF-1000XM5</h2><p>Flagship ANC buds with LDAC and long per-charge life. Best if you care about codecs more than Bose-style fit fins.</p></a>
-      <a class="card" href="reviews/sony-wf-1000xm6.html"><div class="cat">Earbuds</div><h2>Sony WF-1000XM6</h2><p>2026 Sony flagship. Same 8-hour ANC battery class as the XM5; upgrades are incremental, not a new category.</p></a>
-      <a class="card" href="reviews/bose-qc-ultra-earbuds-2nd-gen.html"><div class="cat">Earbuds</div><h2>Bose QC Ultra Earbuds (2nd Gen)</h2><p>Comfort and ANC first. Shorter battery than Sony. Wireless charging case is new vs. first-gen Ultra.</p></a>
-      <a class="card" href="reviews/sony-vs-bose-earbuds.html"><div class="cat">Comparison</div><h2>Sony XM5 vs Bose QC Ultra earbuds</h2><p>Sound/codecs vs comfort/ANC. No single winner — we map the trade-offs from published specs and reviews.</p></a>
-      <a class="card" href="reviews/sony-wh-1000xm5.html"><div class="cat">Headphones</div><h2>Sony WH-1000XM5</h2><p>Still the value flagship over-ear: 30-hour ANC battery, LDAC, eight mics. Hinge durability is a known public complaint theme.</p></a>
-      <a class="card" href="reviews/bose-qc-ultra-headphones.html"><div class="cat">Headphones</div><h2>Bose QuietComfort Ultra Headphones</h2><p>First-gen Ultra over-ears: Immersive Audio, CustomTune, up to 24 hours (18 with Immersive Audio).</p></a>
-      <a class="card" href="reviews/sony-vs-bose-headphones.html"><div class="cat">Comparison</div><h2>XM5 vs Bose QC Ultra headphones</h2><p>Battery, codecs, and price-flex vs comfort and Bose’s Immersive Audio modes.</p></a>
-      <a class="card" href="reviews/jbl-charge-6.html"><div class="cat">Speaker</div><h2>JBL Charge 6</h2><p>IP68, power bank, 24+4 hours claimed playtime. The “take it outside” mid-ticket speaker.</p></a>
-      <a class="card" href="reviews/bose-soundlink-flex-2nd-gen.html"><div class="cat">Speaker</div><h2>Bose SoundLink Flex (2nd Gen)</h2><p>Smaller, IP67, floats, 12-hour claim. Better packability than the Charge 6; shorter runtime.</p></a>
-      <a class="card" href="reviews/garmin-gpsmap-67i.html"><div class="cat">GPS</div><h2>Garmin GPSMAP 67i</h2><p>Handheld maps plus inReach SOS/messaging. Subscription required. Heavy if you only want a messenger.</p></a>
-      <a class="card" href="reviews/garmin-inreach-mini-2.html"><div class="cat">GPS</div><h2>Garmin inReach Mini 2</h2><p>Pocket satellite communicator. Same Iridium idea, far less nav screen. Subscription still required.</p></a>
-      <a class="card" href="reviews/garmin-67i-vs-inreach-mini-2.html"><div class="cat">Comparison</div><h2>GPSMAP 67i vs inReach Mini 2</h2><p>One device for maps + SOS vs a tiny messenger plus your phone.</p></a>
+
+  <nav class="section-nav" aria-label="Desks">
+    <div class="wrap section-nav-inner">
+      <a href="#latest">The latest</a>
+      <a href="#earbuds">Earbuds</a>
+      <a href="#headphones">Headphones</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#gps">GPS</a>
     </div>
+  </nav>
+
+  <section class="featured" id="latest" aria-labelledby="featured-title">
+    <p class="kicker">Featured comparison</p>
+    <h2 id="featured-title">Sony XM5 vs Bose QC Ultra earbuds</h2>
+    <p class="deck">Sound/codecs vs comfort/ANC. No single winner — we map the trade-offs from published specs and reviews.</p>
+    <a class="ghost" href="reviews/sony-vs-bose-earbuds.html">Read the comparison</a>
   </section>
-  <section class="wrap prose" style="padding-bottom:3rem">
-    <h2>Who this site is for</h2>
-    <p>People spending real money on mid-ticket electronics — roughly earbuds, headphones, GPS, and portable speakers that often sit above $100 — who want a clear “buy / skip / wait for a sale” argument. We are not trying to rank every SKU on Amazon.</p>
-    <p>If you want a store, shop Amazon. If you want someone to tell you a $250 pair of buds is “perfect for everyone,” this is the wrong site.</p>
+
+  <section class="wrap desks">
+    <section class="desk" id="earbuds">
+      <header class="desk-head">
+        <h2>Earbuds</h2>
+      </header>
+      <ol class="desk-list">
+        <li>
+          <a href="reviews/sony-wf-1000xm5.html">
+            <span class="desk-cat">Earbuds</span>
+            <span>
+              <h3 class="desk-title">Sony WF-1000XM5</h3>
+              <p class="desk-dek">Flagship ANC buds with LDAC and long per-charge life. Best if you care about codecs more than Bose-style fit fins.</p>
+            </span>
+            <span class="desk-go">Review</span>
+          </a>
+        </li>
+        <li>
+          <a href="reviews/sony-wf-1000xm6.html">
+            <span class="desk-cat">Earbuds</span>
+            <span>
+              <h3 class="desk-title">Sony WF-1000XM6</h3>
+              <p class="desk-dek">2026 Sony flagship. Same 8-hour ANC battery class as the XM5; upgrades are incremental, not a new category.</p>
+            </span>
+            <span class="desk-go">Review</span>
+          </a>
+        </li>
+        <li>
+          <a href="reviews/bose-qc-ultra-earbuds-2nd-gen.html">
+            <span class="desk-cat">Earbuds</span>
+            <span>
+              <h3 class="desk-title">Bose QC Ultra Earbuds (2nd Gen)</h3>
+              <p class="desk-dek">Comfort and ANC first. Shorter battery than Sony. Wireless charging case is new vs. first-gen Ultra.</p>
+            </span>
+            <span class="desk-go">Review</span>
+          </a>
+        </li>
+        <li>
+          <a href="reviews/sony-vs-bose-earbuds.html">
+            <span class="desk-cat">Comparison</span>
+            <span>
+              <h3 class="desk-title">Sony XM5 vs Bose QC Ultra earbuds</h3>
+              <p class="desk-dek">Sound/codecs vs comfort/ANC. No single winner — we map the trade-offs from published specs and reviews.</p>
+            </span>
+            <span class="desk-go">Compare</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+
+    <section class="desk" id="headphones">
+      <header class="desk-head">
+        <h2>Headphones</h2>
+      </header>
+      <ol class="desk-list">
+        <li>
+          <a href="reviews/sony-wh-1000xm5.html">
+            <span class="desk-cat">Headphones</span>
+            <span>
+              <h3 class="desk-title">Sony WH-1000XM5</h3>
+              <p class="desk-dek">Still the value flagship over-ear: 30-hour ANC battery, LDAC, eight mics. Hinge durability is a known public complaint theme.</p>
+            </span>
+            <span class="desk-go">Review</span>
+          </a>
+        </li>
+        <li>
+          <a href="reviews/bose-qc-ultra-headphones.html">
+            <span class="desk-cat">Headphones</span>
+            <span>
+              <h3 class="desk-title">Bose QuietComfort Ultra Headphones</h3>
+              <p class="desk-dek">First-gen Ultra over-ears: Immersive Audio, CustomTune, up to 24 hours (18 with Immersive Audio).</p>
+            </span>
+            <span class="desk-go">Review</span>
+          </a>
+        </li>
+        <li>
+          <a href="reviews/sony-vs-bose-headphones.html">
+            <span class="desk-cat">Comparison</span>
+            <span>
+              <h3 class="desk-title">XM5 vs Bose QC Ultra headphones</h3>
+              <p class="desk-dek">Battery, codecs, and price-flex vs comfort and Bose’s Immersive Audio modes.</p>
+            </span>
+            <span class="desk-go">Compare</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+
+    <section class="desk" id="speakers">
+      <header class="desk-head">
+        <h2>Speakers</h2>
+      </header>
+      <ol class="desk-list">
+        <li>
+          <a href="reviews/jbl-charge-6.html">
+            <span class="desk-cat">Speaker</span>
+            <span>
+              <h3 class="desk-title">JBL Charge 6</h3>
+              <p class="desk-dek">IP68, power bank, 24+4 hours claimed playtime. The “take it outside” mid-ticket speaker.</p>
+            </span>
+            <span class="desk-go">Review</span>
+          </a>
+        </li>
+        <li>
+          <a href="reviews/bose-soundlink-flex-2nd-gen.html">
+            <span class="desk-cat">Speaker</span>
+            <span>
+              <h3 class="desk-title">Bose SoundLink Flex (2nd Gen)</h3>
+              <p class="desk-dek">Smaller, IP67, floats, 12-hour claim. Better packability than the Charge 6; shorter runtime.</p>
+            </span>
+            <span class="desk-go">Review</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+
+    <section class="desk" id="gps">
+      <header class="desk-head">
+        <h2>GPS</h2>
+      </header>
+      <ol class="desk-list">
+        <li>
+          <a href="reviews/garmin-gpsmap-67i.html">
+            <span class="desk-cat">GPS</span>
+            <span>
+              <h3 class="desk-title">Garmin GPSMAP 67i</h3>
+              <p class="desk-dek">Handheld maps plus inReach SOS/messaging. Subscription required. Heavy if you only want a messenger.</p>
+            </span>
+            <span class="desk-go">Review</span>
+          </a>
+        </li>
+        <li>
+          <a href="reviews/garmin-inreach-mini-2.html">
+            <span class="desk-cat">GPS</span>
+            <span>
+              <h3 class="desk-title">Garmin inReach Mini 2</h3>
+              <p class="desk-dek">Pocket satellite communicator. Same Iridium idea, far less nav screen. Subscription still required.</p>
+            </span>
+            <span class="desk-go">Review</span>
+          </a>
+        </li>
+        <li>
+          <a href="reviews/garmin-67i-vs-inreach-mini-2.html">
+            <span class="desk-cat">Comparison</span>
+            <span>
+              <h3 class="desk-title">GPSMAP 67i vs inReach Mini 2</h3>
+              <p class="desk-dek">One device for maps + SOS vs a tiny messenger plus your phone.</p>
+            </span>
+            <span class="desk-go">Compare</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+  </section>
+
+  <section class="closer">
+    <div class="wrap prose">
+      <h2>Who this site is for</h2>
+      <p>People spending real money on mid-ticket electronics — roughly earbuds, headphones, GPS, and portable speakers that often sit above $100 — who want a clear “buy / skip / wait for a sale” argument. We are not trying to rank every SKU on Amazon.</p>
+      <p>If you want a store, shop Amazon. If you want someone to tell you a $250 pair of buds is “perfect for everyone,” this is the wrong site.</p>
+    </div>
   </section>
 </main>
     <footer class="site">
