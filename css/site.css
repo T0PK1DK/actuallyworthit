@@ -457,6 +457,37 @@ a:hover { color: var(--ink); }
 }
 .product-pair figure { margin: 0; }
 
+.grade {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 0.55rem 0 0.75rem;
+}
+.lede-verdict {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 1rem 1.05rem 1.05rem;
+  margin: 0 0 1.25rem;
+  box-shadow: var(--shadow);
+}
+.lede-verdict .kicker { margin-bottom: 0.4rem; }
+.lede-verdict p:last-child { margin-bottom: 0; }
+.related {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+}
+.related a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.related a:hover { border-bottom-color: var(--ink); }
+
 .review-summary {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
