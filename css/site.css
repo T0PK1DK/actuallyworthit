@@ -652,6 +652,7 @@ a:hover { color: var(--ink); }
   text-transform: uppercase;
   margin: 0 0 0.65rem;
 }
+.box ul { margin: 0; }
 .box-solo { margin: 0 0 1.25rem; }
 
 table {
