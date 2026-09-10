@@ -653,12 +653,27 @@ a:hover { color: var(--ink); }
   margin: 0 0 0.65rem;
 }
 .box ul { margin: 0; }
+.box-solo { margin: 0 0 1.25rem; }
 
 table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.84rem;
   margin: 1.15rem 0 1.6rem;
+}
+.table-scroll {
+  overflow-x: auto;
+  margin: 1.15rem 0 1.6rem;
+}
+.table-scroll table { margin: 0; }
+.buy-row-unverified .buy-row-meta {
+  color: var(--ink);
+}
+.buy-unverified-note {
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+  margin: 0.75rem 0 0;
 }
 th, td {
   text-align: left;
