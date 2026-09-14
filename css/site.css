@@ -626,6 +626,16 @@ a:hover { color: var(--ink); }
 }
 .btn:hover { background: var(--accent-hover); color: #fff !important; }
 .btn-compact { margin-top: 0; padding: 0.72rem 0.95rem; }
+.btn.is-placeholder,
+.btn:disabled {
+  background: #6e746c;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.btn.is-placeholder:hover,
+.btn:disabled:hover {
+  background: #6e746c;
+}
 .note {
   font-family: var(--sans);
   font-size: 0.78rem;
