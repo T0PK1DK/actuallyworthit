@@ -13,8 +13,10 @@
     .skip-link:focus{clip:auto;width:auto;height:auto;left:16px;top:12px;background:#141210;color:#fff;padding:.5rem .75rem;z-index:50;text-decoration:none}
     img{max-width:100%;height:auto;display:block}
     a{color:inherit}
-    /* Keep secondary accessory placeholders visible on small screens; dock is phones-only. */
+    /* Keep secondary accessory check-price visible on small screens; dock is phones-only. */
     .has-dock #accessories.buy-panel .btn { display: inline-flex; }
+    .buy-cta { display: flex; flex-direction: column; align-items: stretch; gap: 0.35rem; }
+    .buy-cta .note { margin: 0; max-width: 12rem; line-height: 1.35; }
   </style>
   <link rel="stylesheet" href="/css/site.css?v=3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,11 +62,11 @@
   <div class="product-pair">
     <figure>
       <img decoding="async" src="/img/products/iphone-18-pro.jpg" width="653" height="653" alt="iPhone 18 Pro in burgundy, official Apple Newsroom product photo">
-      <figcaption>iPhone 18 Pro · Apple Newsroom product photo · Amazon ASIN not confirmed at ship</figcaption>
+      <figcaption>iPhone 18 Pro · Apple Newsroom product photo · Amazon listing not live yet</figcaption>
     </figure>
     <figure>
       <img decoding="async" src="/img/products/iphone-17-pro.jpg" width="653" height="653" alt="iPhone 17 Pro in cosmic orange, official Apple Newsroom product photo">
-      <figcaption>iPhone 17 Pro · Apple Newsroom product photo · Amazon ASIN not confirmed at ship</figcaption>
+      <figcaption>iPhone 17 Pro · Apple Newsroom product photo · Amazon ASIN B0FSB8V9NK (Renewed — confirm condition)</figcaption>
     </figure>
   </div>
   <div class="review-summary">
@@ -77,71 +79,77 @@
       <img loading="lazy" decoding="async" src="/img/products/iphone-18-pro.jpg" width="96" height="96" alt="">
       <div>
       <strong class="buy-row-name">iPhone 18 Pro</strong>
-      <span class="buy-row-meta">Listing not confirmed — confirm on Amazon. Apple Newsroom MSRP theme: from $1,199 (U.S., 256GB). We do not invent an ASIN or affiliate URL.</span>
+      <span class="buy-row-meta">Amazon listing not live yet (NOT_LISTED). Apple Newsroom MSRP theme: from $1,199 (U.S., 256GB). We do not invent an ASIN or affiliate URL.</span>
       </div>
     </div>
-    <span class="btn btn-compact is-placeholder" aria-disabled="true">Confirm on Amazon</span>
+    <div class="buy-cta">
+      <span class="btn btn-compact is-placeholder" aria-disabled="true">Confirm on Amazon</span>
+      <p class="note">Amazon listing not live yet — confirm street price when it appears.</p>
+    </div>
   </div>
-  <div class="buy-row buy-row-unverified">
+  <div class="buy-row">
     <div class="buy-row-visual">
       <img loading="lazy" decoding="async" src="/img/products/iphone-17-pro.jpg" width="96" height="96" alt="">
       <div>
       <strong class="buy-row-name">iPhone 17 Pro</strong>
-      <span class="buy-row-meta">Listing not confirmed — confirm on Amazon. Apple Newsroom launch MSRP theme: from $1,099 (U.S., 256GB). Last-gen street may move — confirm live. We do not invent an ASIN or affiliate URL.</span>
+      <span class="buy-row-meta">ASIN <code>B0FSB8V9NK</code>. Apple Newsroom launch MSRP theme: from $1,099 (U.S., 256GB). We do not list a price here because Amazon prices move constantly.</span>
       </div>
     </div>
-    <span class="btn btn-compact is-placeholder" aria-disabled="true">Confirm on Amazon</span>
+    <div class="buy-cta">
+      <a class="btn btn-compact" href="https://www.amazon.com/dp/B0FSB8V9NK?tag=actuallywo08c-20" data-asin="B0FSB8V9NK" data-affiliate="live" aria-label="Check price on Amazon, ASIN B0FSB8V9NK">Check price on Amazon</a>
+      <p class="note">Amazon Renewed listing — confirm condition and battery before buy.</p>
+    </div>
   </div>
-  <p class="buy-unverified-note">Amazon check-price buttons stay placeholders until a SiteStripe paste (tag actuallywo08c-20). iPhone 18 Pro Max is a size/battery fork (6.9-inch / up to 45h video — Apple), not this matchup. Non-Pro iPhone 18 / budget lines: confirm live; not this page. No iPad, Mac, or Duo page.</p>
-  <p class="disclosure"><span class="info-mark" aria-hidden="true">i</span> Amazon Associate link, when live. We may earn a commission at no extra cost to you.</p>
+  <p class="buy-unverified-note">iPhone 18 Pro has no Amazon listing yet — placeholder only. 17 Pro check-price is a live Associate link (Amazon Renewed — confirm condition). iPhone 18 Pro Max is a size/battery fork (6.9-inch / up to 45h video — Apple), not this matchup. Non-Pro iPhone 18 / budget lines: confirm live; not this page. No iPad, Mac, or Duo page.</p>
+  <p class="disclosure"><span class="info-mark" aria-hidden="true">i</span> Amazon Associate link. We may earn a commission at no extra cost to you.</p>
 </div>
 <h2>Accessories (secondary)</h2>
-<p>Not a product grid. Matching-model MagSafe cases are generation-specific — confirm fit. Chargers and cables are shared USB-C / MagSafe jobs. Placeholders until SiteStripe. We do not invent ASINs.</p>
+<p>Not a product grid. Spigen MagFit is listed for 17 Pro and 18 Pro — confirm fit on the listing. Apple Clear MagSafe is a 17 Pro case. Chargers and cables are shared USB-C / MagSafe jobs.</p>
 <div class="buy-panel" id="accessories">
-  <div class="buy-row buy-row-unverified">
+  <div class="buy-row">
     <div class="buy-row-visual">
       <div>
-      <strong class="buy-row-name">MagSafe case for iPhone 18 Pro</strong>
-      <span class="buy-row-meta">Apple Newsroom 18 Pro MagSafe case themes: Silicone / Clear from $49, TechWoven from $59 (U.S.). Listing not confirmed — confirm on Amazon. We do not invent an ASIN.</span>
+      <strong class="buy-row-name">Spigen Ultra Hybrid MagFit (17 Pro &amp; 18 Pro)</strong>
+      <span class="buy-row-meta">ASIN <code>B0FD28CZDK</code>. MagSafe case listed for 17 Pro and 18 Pro — confirm fit. We do not list a price here because Amazon prices move constantly.</span>
       </div>
     </div>
-    <span class="btn btn-compact is-placeholder" aria-disabled="true">Confirm on Amazon</span>
+    <a class="btn btn-compact" href="https://www.amazon.com/dp/B0FD28CZDK?tag=actuallywo08c-20" data-asin="B0FD28CZDK" data-affiliate="live" aria-label="Check price on Amazon, ASIN B0FD28CZDK">Check price on Amazon</a>
   </div>
-  <div class="buy-row buy-row-unverified">
+  <div class="buy-row">
     <div class="buy-row-visual">
       <div>
-      <strong class="buy-row-name">MagSafe case for iPhone 17 Pro</strong>
-      <span class="buy-row-meta">Matching-model 17 Pro MagSafe case. Do not assume an 18 Pro case fits 17 Pro. Listing not confirmed — confirm on Amazon. We do not invent an ASIN.</span>
+      <strong class="buy-row-name">Apple Clear Case with MagSafe (17 Pro)</strong>
+      <span class="buy-row-meta">ASIN <code>B0FQG8N632</code>. 17 Pro MagSafe case. Confirm fit. We do not list a price here because Amazon prices move constantly.</span>
       </div>
     </div>
-    <span class="btn btn-compact is-placeholder" aria-disabled="true">Confirm on Amazon</span>
+    <a class="btn btn-compact" href="https://www.amazon.com/dp/B0FQG8N632?tag=actuallywo08c-20" data-asin="B0FQG8N632" data-affiliate="live" aria-label="Check price on Amazon, ASIN B0FQG8N632">Check price on Amazon</a>
   </div>
-  <div class="buy-row buy-row-unverified">
+  <div class="buy-row">
     <div class="buy-row-visual">
       <div>
-      <strong class="buy-row-name">20W+ USB-C GaN charger</strong>
-      <span class="buy-row-meta">Not in the phone box as a high-watt brick. Apple 18 Pro fast-charge theme: up to 50% in ~15 minutes with a 60W-capable AVS adapter (Apple spec). Listing not confirmed — confirm on Amazon.</span>
+      <strong class="buy-row-name">Anker Nano 30W USB-C GaN</strong>
+      <span class="buy-row-meta">ASIN <code>B0B2MM1W65</code>. 20W+ USB-C GaN brick. Apple 18 Pro fast-charge theme uses a higher-watt AVS adapter (sold separately). We do not list a price here because Amazon prices move constantly.</span>
       </div>
     </div>
-    <span class="btn btn-compact is-placeholder" aria-disabled="true">Confirm on Amazon</span>
+    <a class="btn btn-compact" href="https://www.amazon.com/dp/B0B2MM1W65?tag=actuallywo08c-20" data-asin="B0B2MM1W65" data-affiliate="live" aria-label="Check price on Amazon, ASIN B0B2MM1W65">Check price on Amazon</a>
   </div>
-  <div class="buy-row buy-row-unverified">
+  <div class="buy-row">
     <div class="buy-row-visual">
       <div>
-      <strong class="buy-row-name">USB-C cable</strong>
-      <span class="buy-row-meta">Spare USB-C cable for wall / laptop charging. Listing not confirmed — confirm on Amazon. We do not invent an ASIN.</span>
+      <strong class="buy-row-name">Anker USB-C cable 60W (2-pack)</strong>
+      <span class="buy-row-meta">ASIN <code>B088NRLMPV</code>. Spare USB-C cable for wall / laptop charging. We do not list a price here because Amazon prices move constantly.</span>
       </div>
     </div>
-    <span class="btn btn-compact is-placeholder" aria-disabled="true">Confirm on Amazon</span>
+    <a class="btn btn-compact" href="https://www.amazon.com/dp/B088NRLMPV?tag=actuallywo08c-20" data-asin="B088NRLMPV" data-affiliate="live" aria-label="Check price on Amazon, ASIN B088NRLMPV">Check price on Amazon</a>
   </div>
-  <div class="buy-row buy-row-unverified">
+  <div class="buy-row">
     <div class="buy-row-visual">
       <div>
-      <strong class="buy-row-name">MagSafe battery pack</strong>
-      <span class="buy-row-meta">Add-on MagSafe power, not a substitute for a wall adapter. Listing not confirmed — confirm on Amazon. We do not invent an ASIN.</span>
+      <strong class="buy-row-name">Anker 621 MagGo 5,000mAh</strong>
+      <span class="buy-row-meta">ASIN <code>B099W63VYV</code>. MagSafe battery pack. Add-on power, not a substitute for a wall adapter. We do not list a price here because Amazon prices move constantly.</span>
       </div>
     </div>
-    <span class="btn btn-compact is-placeholder" aria-disabled="true">Confirm on Amazon</span>
+    <a class="btn btn-compact" href="https://www.amazon.com/dp/B099W63VYV?tag=actuallywo08c-20" data-asin="B099W63VYV" data-affiliate="live" aria-label="Check price on Amazon, ASIN B099W63VYV">Check price on Amazon</a>
   </div>
 </div>
 <h2>Who it’s for / who should skip</h2>
@@ -183,7 +191,7 @@
   <tr><td>Cellular / wireless</td><td>Apple C2 modem; N1 (Wi-Fi 7 / Bluetooth 6 / Thread) (Apple)</td><td>N1 wireless chip (Apple Newsroom 2025). 17 Pro cellular path is last-gen vs C2 — confirm on Apple spec; do not invent a lab crown</td></tr>
   <tr><td>Storage</td><td>256GB / 512GB / 1TB / 2TB (Apple Newsroom)</td><td>256GB / 512GB / 1TB. 2TB was Pro Max-only in 2025 (Apple Newsroom)</td></tr>
   <tr><td>OS at launch</td><td>iOS 27; Apple Intelligence + Siri AI beta (Apple Newsroom; region/language limits)</td><td>iOS 26; Apple Intelligence (Apple Newsroom 2025; region/language limits)</td></tr>
-  <tr><td>Availability</td><td>Pre-order 2026-09-12; stores beginning Friday, Sep 18 (Apple Newsroom). Amazon ASIN not confirmed</td><td>Launched Sep 2025 (Apple Newsroom). Last-gen leftover / carrier stock — confirm live. Amazon ASIN not confirmed</td></tr>
+  <tr><td>Availability</td><td>Pre-order 2026-09-12; stores beginning Friday, Sep 18 (Apple Newsroom). Amazon listing not live yet</td><td>Launched Sep 2025 (Apple Newsroom). Amazon ASIN B0FSB8V9NK (Renewed listing — confirm condition)</td></tr>
 </table>
 </div>
 <div class="tradeoffs-head">
@@ -202,7 +210,7 @@
   <h2>Wait for a sale</h2>
   <img class="worth-accent worth-accent--gutter" src="/img/worth/neutral-gutter.png?v=2" width="200" height="240" alt="Worth mascot (illustrative)" decoding="async" loading="lazy">
 </div>
-<p>No sticky “buy under $X” on this page. iPhone 18 Pro is new (Apple Newsroom 2026-09-09; pre-order Sep 12; stores beginning Friday, Sep 18). 17 Pro is last-gen — street prices may move off the $1,099 launch theme; confirm on Amazon. MSRP here is dated to those Newsroom posts only. Amazon ASIN not confirmed at ship; check-price stays a placeholder until SiteStripe.</p>
+<p>No sticky “buy under $X” on this page. iPhone 18 Pro is new (Apple Newsroom 2026-09-09; pre-order Sep 12; stores beginning Friday, Sep 18). 17 Pro is last-gen — street prices may move off the $1,099 launch theme; confirm on Amazon. MSRP here is dated to those Newsroom posts only. 18 Pro Amazon listing is not live yet (no ASIN). 17 Pro check-price is ASIN B0FSB8V9NK (Amazon Renewed — confirm condition).</p>
 <div class="verdict">
   <div class="verdict-head">
     <h2>Verdict</h2>
@@ -238,7 +246,7 @@
   </details>
   <details>
     <summary>When can I buy them?</summary>
-    <p>18 Pro: pre-order 2026-09-12; stores beginning Friday, Sep 18 (Apple Newsroom). 17 Pro launched Sep 2025 — leftover / carrier stock, confirm live. Amazon listing ASIN not confirmed at ship. Check-price buttons on this page are placeholders until a SiteStripe paste.</p>
+    <p>18 Pro: pre-order 2026-09-12; stores beginning Friday, Sep 18 (Apple Newsroom). Amazon listing not live yet — no ASIN. 17 Pro launched Sep 2025; check-price is ASIN B0FSB8V9NK (Amazon Renewed — confirm condition and battery).</p>
   </details>
 </div>
 <p class="related">Related: <a href="/reviews/apple-watch-series-12-vs-ultra-4.html">Apple Watch Series 12 vs Ultra 4</a> ·
@@ -249,19 +257,19 @@
 <aside class="buy-dock" aria-label="Check prices">
   <div class="buy-dock-inner">
     <div class="buy-dock-meta">
-      <p class="buy-dock-name">iPhone 18 Pro · iPhone 17 Pro (listings not confirmed)</p>
-      <p class="buy-dock-note">Check-price is a placeholder until SiteStripe. We do not invent ASINs. We may earn a commission if you later buy through Amazon Associate links.</p>
+      <p class="buy-dock-name">iPhone 18 Pro (not listed) · iPhone 17 Pro</p>
+      <p class="buy-dock-note">17 Pro is a live Associate link (Amazon Renewed — confirm condition). 18 Pro has no Amazon listing yet. We may earn a commission if you buy through Amazon Associate links.</p>
     </div>
     <div class="buy-dock-actions">
       <span class="btn btn-compact is-placeholder" aria-disabled="true">18 Pro</span>
-      <span class="btn btn-compact is-placeholder" aria-disabled="true">17 Pro</span>
+      <a class="btn btn-compact" href="https://www.amazon.com/dp/B0FSB8V9NK?tag=actuallywo08c-20" data-asin="B0FSB8V9NK" data-affiliate="live" aria-label="Check price on Amazon, ASIN B0FSB8V9NK">17 Pro</a>
     </div>
   </div>
 </aside>
     <footer class="site">
       <div class="wrap ft-grid">
         <div>
-          <p><strong>Affiliate disclosure.</strong> Actually Worth It is a participant in the Amazon Associates Program. If you click a “check price” link and buy something, we may earn a commission at no extra cost to you. We are not Amazon, and this is not a store. Buy buttons use our Amazon Associates tag (actuallywo08c-20) when a live listing exists.</p>
+          <p><strong>Affiliate disclosure.</strong> Actually Worth It is a participant in the Amazon Associates Program. If you click a “check price” link and buy something, we may earn a commission at no extra cost to you. We are not Amazon, and this is not a store. Buy buttons use our Amazon Associates tag (actuallywo08c-20).</p>
           <p>We write from public specs, manufacturer pages, and published review themes. We do not invent prices, star ratings, or customer quotes. Street prices change — always confirm on Amazon.</p>
         </div>
         <div>
