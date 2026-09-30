@@ -1,0 +1,391 @@
+{
+  "_readme": "Single source of truth for every Amazon link on the site. Edit this file, then run: python3 tools/build-index.py  (rebuilds the homepage). Then run: python3 tools/check-links.py  (verifies every link site-wide). Never invent an ASIN: if a product has no confirmed Amazon listing, leave asin null and the site renders an honest 'Not listed yet' button instead of a buy link.",
+  "affiliate": {
+    "tag": "actuallywo08c-20",
+    "link_code": "ll1",
+    "url_template": "https://www.amazon.com/dp/{asin}?tag={tag}&linkCode={link_code}",
+    "rel": "sponsored nofollow noopener"
+  },
+  "categories": [
+    {
+      "id": "all",
+      "label": "Everything"
+    },
+    {
+      "id": "phones",
+      "label": "Phones"
+    },
+    {
+      "id": "watches",
+      "label": "Watches"
+    },
+    {
+      "id": "earbuds",
+      "label": "Earbuds"
+    },
+    {
+      "id": "headphones",
+      "label": "Headphones"
+    },
+    {
+      "id": "speakers",
+      "label": "Speakers"
+    },
+    {
+      "id": "gps",
+      "label": "GPS"
+    }
+  ],
+  "reviews": [
+    {
+      "href": "/reviews/iphone-18-pro-vs-17-pro.html",
+      "label": "iPhone 18 Pro vs 17 Pro"
+    },
+    {
+      "href": "/reviews/apple-watch-series-12-vs-ultra-4.html",
+      "label": "Apple Watch Series 12 vs Ultra 4"
+    },
+    {
+      "href": "/reviews/airpods-5-vs-pro-3.html",
+      "label": "AirPods 5 vs AirPods Pro 3"
+    },
+    {
+      "href": "/reviews/airpods-pro-vs-bose-earbuds.html",
+      "label": "AirPods Pro 3 vs Bose QC Ultra"
+    },
+    {
+      "href": "/reviews/sony-vs-bose-earbuds.html",
+      "label": "Sony vs Bose earbuds"
+    },
+    {
+      "href": "/reviews/sony-vs-bose-headphones.html",
+      "label": "Sony vs Bose headphones"
+    },
+    {
+      "href": "/reviews/garmin-67i-vs-inreach-mini-2.html",
+      "label": "GPSMAP 67i vs inReach Mini 2"
+    },
+    {
+      "href": "/reviews/sony-wf-1000xm5.html",
+      "label": "Sony WF-1000XM5"
+    },
+    {
+      "href": "/reviews/sony-wf-1000xm6.html",
+      "label": "Sony WF-1000XM6"
+    },
+    {
+      "href": "/reviews/bose-qc-ultra-earbuds-2nd-gen.html",
+      "label": "Bose QC Ultra Earbuds (2nd Gen)"
+    },
+    {
+      "href": "/reviews/sony-wh-1000xm5.html",
+      "label": "Sony WH-1000XM5"
+    },
+    {
+      "href": "/reviews/bose-qc-ultra-headphones.html",
+      "label": "Bose QC Ultra Headphones"
+    },
+    {
+      "href": "/reviews/jbl-charge-6.html",
+      "label": "JBL Charge 6"
+    },
+    {
+      "href": "/reviews/bose-soundlink-flex-2nd-gen.html",
+      "label": "Bose SoundLink Flex (2nd Gen)"
+    },
+    {
+      "href": "/reviews/garmin-gpsmap-67i.html",
+      "label": "Garmin GPSMAP 67i"
+    },
+    {
+      "href": "/reviews/garmin-inreach-mini-2.html",
+      "label": "Garmin inReach Mini 2"
+    }
+  ],
+  "products": [
+    {
+      "id": "iphone-18-pro",
+      "name": "iPhone 18 Pro",
+      "asin": null,
+      "condition": "new",
+      "category": "phones",
+      "verdict": "DEPENDS",
+      "evidence": "Sourced",
+      "dek": "A20 Pro, variable-aperture Fusion Main and the battery bump, from $1,199.",
+      "image": "/img/products/iphone-18-pro.jpg",
+      "alt": "Apple iPhone 18 Pro",
+      "review": {
+        "href": "/reviews/iphone-18-pro-vs-17-pro.html",
+        "label": "iPhone 18 Pro vs 17 Pro"
+      }
+    },
+    {
+      "id": "iphone-17-pro",
+      "name": "iPhone 17 Pro",
+      "asin": "B0FSB8V9NK",
+      "condition": "renewed",
+      "category": "phones",
+      "verdict": "DEPENDS",
+      "evidence": "Sourced",
+      "dek": "Last year’s aluminium unibody and triple 48MP, from $1,099. Still does the job.",
+      "image": "/img/products/iphone-17-pro.jpg",
+      "alt": "Apple iPhone 17 Pro",
+      "review": {
+        "href": "/reviews/iphone-18-pro-vs-17-pro.html",
+        "label": "iPhone 18 Pro vs 17 Pro"
+      }
+    },
+    {
+      "id": "apple-watch-series-12",
+      "name": "Apple Watch Series 12",
+      "asin": "B0HJBCX8VS",
+      "condition": "new",
+      "category": "watches",
+      "verdict": "DEPENDS",
+      "evidence": "Sourced",
+      "dek": "The everyday size at $399. Same S11 Health Sensing generation as the Ultra.",
+      "image": "/img/products/apple-watch-series-12.jpg",
+      "alt": "Apple Watch Series 12",
+      "review": {
+        "href": "/reviews/apple-watch-series-12-vs-ultra-4.html",
+        "label": "Series 12 vs Ultra 4"
+      }
+    },
+    {
+      "id": "apple-watch-ultra-4",
+      "name": "Apple Watch Ultra 4",
+      "asin": "B0HJB42BMK",
+      "condition": "new",
+      "category": "watches",
+      "verdict": "DEPENDS",
+      "evidence": "Sourced",
+      "dek": "50-hour battery, dive and dual-band GPS at $799. Adventure hardware, not better sensors.",
+      "image": "/img/products/apple-watch-ultra-4.jpg",
+      "alt": "Apple Watch Ultra 4",
+      "review": {
+        "href": "/reviews/apple-watch-series-12-vs-ultra-4.html",
+        "label": "Series 12 vs Ultra 4"
+      }
+    },
+    {
+      "id": "airpods-5",
+      "name": "AirPods 5",
+      "asin": "B0HJB69GJL",
+      "condition": "new",
+      "category": "earbuds",
+      "verdict": "DEPENDS",
+      "evidence": "Sourced",
+      "dek": "Open-ear fit with ANC on both SKUs, $129 / $149. Not a cheaper Pro 3.",
+      "image": "/img/products/airpods-5.jpg",
+      "alt": "Apple AirPods 5 with charging case",
+      "review": {
+        "href": "/reviews/airpods-5-vs-pro-3.html",
+        "label": "AirPods 5 vs Pro 3"
+      },
+      "variants": [
+        {
+          "name": "AirPods 5 with Wireless Charging Case",
+          "asin": "B0HJB76H2V",
+          "note": "Adds stem volume swipe. $149 launch theme. Linked from the review page, not the homepage tile."
+        }
+      ]
+    },
+    {
+      "id": "airpods-pro-3",
+      "name": "AirPods Pro 3",
+      "asin": "B0FQFB8FMG",
+      "condition": "new",
+      "category": "earbuds",
+      "verdict": "DEPENDS",
+      "evidence": "Sourced",
+      "dek": "The sealed-tip flagship, ~$249 theme. Five tip sizes and the Pro feature path.",
+      "image": "/img/products/airpods-pro-3.jpg",
+      "alt": "Apple AirPods Pro 3 with MagSafe case",
+      "review": {
+        "href": "/reviews/airpods-5-vs-pro-3.html",
+        "label": "AirPods 5 vs Pro 3"
+      }
+    },
+    {
+      "id": "sony-wf-1000xm5",
+      "name": "Sony WF-1000XM5",
+      "asin": "B0C33XXS56",
+      "condition": "new",
+      "category": "earbuds",
+      "verdict": "WORTH IT",
+      "evidence": "Sourced",
+      "dek": "Sony’s codec and battery package without paying for the XM6’s incremental upgrades.",
+      "image": "/img/products/sony-wf-1000xm5.jpg",
+      "alt": "Sony WF-1000XM5 earbuds",
+      "review": {
+        "href": "/reviews/sony-wf-1000xm5.html",
+        "label": "Sony WF-1000XM5"
+      }
+    },
+    {
+      "id": "sony-wf-1000xm6",
+      "name": "Sony WF-1000XM6",
+      "asin": "B0G6J6YNV9",
+      "condition": "new",
+      "category": "earbuds",
+      "verdict": "WORTH IT",
+      "evidence": "Sourced",
+      "dek": "A first Sony flagship, or an upgrade from XM4-and-older. Harder sell if you own the XM5.",
+      "image": "/img/products/sony-wf-1000xm6.jpg",
+      "alt": "Sony WF-1000XM6 earbuds",
+      "review": {
+        "href": "/reviews/sony-wf-1000xm6.html",
+        "label": "Sony WF-1000XM6"
+      }
+    },
+    {
+      "id": "bose-qc-ultra-earbuds",
+      "name": "Bose QC Ultra Earbuds (2nd Gen)",
+      "asin": "B0F7M3HPBD",
+      "condition": "new",
+      "category": "earbuds",
+      "verdict": "WORTH IT",
+      "evidence": "Sourced",
+      "dek": "Comfort, fins and the Bose ANC reputation. Not the battery or codec champ.",
+      "image": "/img/products/bose-qc-ultra-earbuds.jpg",
+      "alt": "Bose QuietComfort Ultra Earbuds 2nd Gen",
+      "review": {
+        "href": "/reviews/bose-qc-ultra-earbuds-2nd-gen.html",
+        "label": "Bose QC Ultra Earbuds"
+      }
+    },
+    {
+      "id": "sony-wh-1000xm5",
+      "name": "Sony WH-1000XM5",
+      "asin": "B09XS7JWHH",
+      "condition": "new",
+      "category": "headphones",
+      "verdict": "WORTH IT",
+      "evidence": "Sourced",
+      "dek": "Still the default Sony over-ear if the live price sits well below a new flagship.",
+      "image": "/img/products/sony-wh-1000xm5.jpg",
+      "alt": "Sony WH-1000XM5 headphones",
+      "review": {
+        "href": "/reviews/sony-wh-1000xm5.html",
+        "label": "Sony WH-1000XM5"
+      }
+    },
+    {
+      "id": "bose-qc-ultra-headphones",
+      "name": "Bose QC Ultra Headphones",
+      "asin": "B0CCZ1L489",
+      "condition": "new",
+      "category": "headphones",
+      "verdict": "WORTH IT",
+      "evidence": "Sourced",
+      "dek": "Comfort and the Immersive modes — if you buy the correct generation. This is the 1st-gen ASIN.",
+      "image": "/img/products/bose-qc-ultra-headphones.jpg",
+      "alt": "Bose QuietComfort Ultra Headphones",
+      "review": {
+        "href": "/reviews/bose-qc-ultra-headphones.html",
+        "label": "Bose QC Ultra Headphones"
+      }
+    },
+    {
+      "id": "jbl-charge-6",
+      "name": "JBL Charge 6",
+      "asin": "B0DPKYBDDJ",
+      "condition": "new",
+      "category": "speakers",
+      "verdict": "WORTH IT",
+      "evidence": "Sourced",
+      "dek": "Mid-ticket party speaker with a power bank. The 28-hour figure is 24 + 4 Playtime Boost.",
+      "image": "/img/products/jbl-charge-6.jpg",
+      "alt": "JBL Charge 6 portable speaker",
+      "review": {
+        "href": "/reviews/jbl-charge-6.html",
+        "label": "JBL Charge 6"
+      }
+    },
+    {
+      "id": "bose-soundlink-flex",
+      "name": "Bose SoundLink Flex (2nd Gen)",
+      "asin": "B0D6WD2QSQ",
+      "condition": "new",
+      "category": "speakers",
+      "verdict": "WORTH IT",
+      "evidence": "Sourced",
+      "dek": "When packability and clean Bose voicing beat Charge-class runtime and IP68.",
+      "image": "/img/products/bose-soundlink-flex.jpg",
+      "alt": "Bose SoundLink Flex 2nd Gen speaker",
+      "review": {
+        "href": "/reviews/bose-soundlink-flex-2nd-gen.html",
+        "label": "Bose SoundLink Flex"
+      }
+    },
+    {
+      "id": "garmin-gpsmap-67i",
+      "name": "Garmin GPSMAP 67i",
+      "asin": "B0BT3KKYYP",
+      "condition": "new",
+      "category": "gps",
+      "verdict": "WORTH IT",
+      "evidence": "Sourced",
+      "dek": "If you navigate on the handheld, not just text from a phone. Budget the airtime.",
+      "image": "/img/products/garmin-gpsmap-67i.jpg",
+      "alt": "Garmin GPSMAP 67i handheld GPS",
+      "review": {
+        "href": "/reviews/garmin-gpsmap-67i.html",
+        "label": "Garmin GPSMAP 67i"
+      }
+    },
+    {
+      "id": "garmin-inreach-mini-2",
+      "name": "Garmin inReach Mini 2",
+      "asin": "B09PSSSFPF",
+      "condition": "new",
+      "category": "gps",
+      "verdict": "WORTH IT",
+      "evidence": "Sourced",
+      "dek": "A dedicated SOS and text brick, if you accept airtime cost and sky-view battery reality.",
+      "image": "/img/products/garmin-inreach-mini-2.jpg",
+      "alt": "Garmin inReach Mini 2 satellite communicator",
+      "review": {
+        "href": "/reviews/garmin-inreach-mini-2.html",
+        "label": "Garmin inReach Mini 2"
+      }
+    }
+  ],
+  "accessories": [
+    {
+      "id": "spigen-ultra-hybrid-magfit",
+      "name": "Spigen Ultra Hybrid MagFit",
+      "asin": "B0FD28CZDK",
+      "note": "Listed for 17 Pro and 18 Pro — confirm fit.",
+      "pairs_with": "iphone-17-pro, iphone-18-pro"
+    },
+    {
+      "id": "apple-clear-case-magsafe",
+      "name": "Apple Clear Case with MagSafe",
+      "asin": "B0FQG8N632",
+      "note": "17 Pro. Matching-model SKU.",
+      "pairs_with": "iphone-17-pro, iphone-18-pro"
+    },
+    {
+      "id": "anker-nano-30w",
+      "name": "Anker Nano 30W USB-C GaN",
+      "asin": "B0B2MM1W65",
+      "note": "18 Pro fast-charge uses a higher-watt AVS adapter, sold separately.",
+      "pairs_with": "iphone-17-pro, iphone-18-pro"
+    },
+    {
+      "id": "anker-usb-c-cable-60w",
+      "name": "Anker USB-C cable 60W (2-pack)",
+      "asin": "B088NRLMPV",
+      "note": "Spare cable for wall or laptop charging.",
+      "pairs_with": "iphone-17-pro, iphone-18-pro"
+    },
+    {
+      "id": "anker-621-maggo",
+      "name": "Anker 621 MagGo 5,000mAh",
+      "asin": "B099W63VYV",
+      "note": "Add-on power. Not a substitute for a wall adapter.",
+      "pairs_with": "iphone-17-pro, iphone-18-pro"
+    }
+  ]
+}
