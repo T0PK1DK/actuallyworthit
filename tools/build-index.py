@@ -47,6 +47,14 @@ def image_size(path):
         return im.size
 
 
+def rail_img(name):
+    """Worth accent in the rail. Dimensions come from the file so the sprite
+    set can be re-cut without this template going stale."""
+    w, h = image_size("/img/worth/%s.png" % name)
+    return ('<img class="worth-rail" src="/img/worth/%s.png" alt="" aria-hidden="true" '
+            'width="%d" height="%d" decoding="async">' % (name, w, h))
+
+
 def tile(p, aff):
     w, h = image_size(p["image"])
     verdict = p["verdict"]
@@ -126,6 +134,8 @@ def main():
         "tiles": tiles,
         "accs": accs,
         "reviews": review_list,
+        "rail_unimpressed": rail_img("unimpressed-skip"),
+        "rail_thinking": rail_img("thinker-tradeoffs"),
     }
 
     with io.open(PAGE, encoding="utf-8") as fh:
@@ -183,13 +193,13 @@ MAIN_TEMPLATE = """<main id="main">
       </div>
 
       <div class="rail-block">
-        <img class="worth-rail" src="/img/worth/unimpressed-skip.png" alt="" aria-hidden="true" width="360" height="360" decoding="async">
+        %(rail_unimpressed)s
         <h2>Why this rail is short</h2>
         <p class="rail-note"><b>We only list an accessory where it changes the decision.</b> A charger does not change whether you pick AirPods 5 or Pro 3, so those pages carry no rail. Padding it out would make this a shop, and we are not one.</p>
       </div>
 
       <div class="rail-block">
-        <img class="worth-rail" src="/img/worth/thinker-tradeoffs.png" alt="" aria-hidden="true" width="360" height="360" decoding="async">
+        %(rail_thinking)s
         <h2>Evidence grade</h2>
         <p class="rail-sub">All %(count)d products are graded <b>Sourced</b>: manufacturer specs and published reviews, attributed. We have run no owned testing, and we say so on every page.</p>
       </div>

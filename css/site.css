@@ -405,7 +405,18 @@ a:hover { color: var(--ink); }
 .picks {
   padding: 1.25rem 0 0.15rem;
 }
-.picks-head { margin: 0 0 0.9rem; }
+.picks-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 0 0 0.9rem;
+}
+.picks-head-copy { min-width: 0; flex: 1 1 auto; }
+.worth-accent--picks {
+  width: 4.25rem;
+  margin-top: 0.2rem;
+}
 .picks-head .kicker { color: var(--accent); }
 .picks-head h2 {
   font-family: var(--sans);
@@ -958,6 +969,7 @@ caption {
   .worth-accent--think,
   .worth-accent--gutter { display: none; }
   .worth-accent--judge { width: 3.6rem; }
+  .worth-accent--picks { width: 3.4rem; }
 }
 
 @media (min-width: 1200px) {

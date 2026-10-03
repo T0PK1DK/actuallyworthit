@@ -66,6 +66,10 @@
       "label": "GPSMAP 67i vs inReach Mini 2"
     },
     {
+      "href": "/reviews/charge-6-vs-soundlink-flex.html",
+      "label": "JBL Charge 6 vs Bose SoundLink Flex"
+    },
+    {
       "href": "/reviews/sony-wf-1000xm5.html",
       "label": "Sony WF-1000XM5"
     },
@@ -298,8 +302,8 @@
       "image": "/img/products/jbl-charge-6.jpg",
       "alt": "JBL Charge 6 portable speaker",
       "review": {
-        "href": "/reviews/jbl-charge-6.html",
-        "label": "JBL Charge 6"
+        "href": "/reviews/charge-6-vs-soundlink-flex.html",
+        "label": "Charge 6 vs SoundLink Flex"
       }
     },
     {
@@ -314,8 +318,8 @@
       "image": "/img/products/bose-soundlink-flex.jpg",
       "alt": "Bose SoundLink Flex 2nd Gen speaker",
       "review": {
-        "href": "/reviews/bose-soundlink-flex-2nd-gen.html",
-        "label": "Bose SoundLink Flex"
+        "href": "/reviews/charge-6-vs-soundlink-flex.html",
+        "label": "Charge 6 vs SoundLink Flex"
       }
     },
     {
