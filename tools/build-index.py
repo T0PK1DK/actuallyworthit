@@ -18,6 +18,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from art import art_inner  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "products.json")
 PAGE = os.path.join(ROOT, "index.html")
@@ -29,9 +32,10 @@ def load():
 
 
 def buy_url(asin, aff):
-    """Build the SiteStripe deep link. &amp; because it lives in an HTML attribute."""
+    """Amazon's documented simple text link: /dp/<ASIN>/ref=nosim?tag=<tag>.
+    &amp; escaping kept in case the template ever gains a second parameter."""
     return aff["url_template"].format(
-        asin=asin, tag=aff["tag"], link_code=aff["link_code"]
+        asin=asin, tag=aff["tag"]
     ).replace("&", "&amp;")
 
 
@@ -55,8 +59,11 @@ def rail_img(name):
             'width="%d" height="%d" decoding="async">' % (name, w, h))
 
 
-def tile(p, aff):
-    w, h = image_size(p["image"])
+# Tile art heights cycle so the masonry keeps a Pinterest rhythm without photos.
+ART_RATIOS = ["4/5", "1/1", "5/4", "1/1", "4/5", "5/4", "1/1"]
+
+
+def tile(p, aff, i):
     verdict = p["verdict"]
     vclass = "v-worth" if verdict == "WORTH IT" else "v-depends"
     pose = "thumbs-up" if verdict == "WORTH IT" else "shrug"
@@ -68,10 +75,10 @@ def tile(p, aff):
                % (url, aff["rel"], p["asin"], html.escape(p["name"]), p["asin"]))
         meta = '<span class="tile-asin">ASIN %s</span>' % p["asin"]
     else:
-        # No confirmed listing. We never invent an ASIN — the tile says so instead.
+        # No confirmed listing. We never invent an ASIN \u2014 the tile says so instead.
         cta = ('<span class="tile-cta is-none" aria-disabled="true">%sNot listed yet</span>'
                % worth("curious", "worth-inline", 26))
-        meta = '<span class="tile-asin">No ASIN — we don’t invent one</span>'
+        meta = '<span class="tile-asin">No ASIN \u2014 we don\u2019t invent one</span>'
 
     if p["condition"] == "renewed":
         badge = '\n          <span class="flag flag-renewed">Renewed</span>'
@@ -81,8 +88,8 @@ def tile(p, aff):
         badge = ""
 
     return """        <article class="tile" data-cat="%s">
-          <div class="tile-img" style="aspect-ratio:%d/%d">
-            <img loading="lazy" decoding="async" src="%s" width="%d" height="%d" alt="%s">
+          <div class="tile-art art-%s" style="aspect-ratio:%s">
+            <div class="art-card" aria-hidden="true">%s</div>
             <span class="verdict-tag %s">%s%s</span>%s
           </div>
           <div class="tile-body">
@@ -93,7 +100,7 @@ def tile(p, aff):
             <p class="tile-src">Reviewed in <a href="%s">%s</a></p>
           </div>
         </article>
-""" % (p["category"], w, h, p["image"], w, h, html.escape(p["alt"]),
+""" % (p["category"], p["category"], ART_RATIOS[i % len(ART_RATIOS)], art_inner(p),
        vclass, worth(pose, "worth-mini", 34), verdict, badge,
        html.escape(p["name"]), html.escape(p["dek"]),
        html.escape(p["evidence"]), meta, cta,
@@ -105,7 +112,7 @@ def main():
     aff = doc["affiliate"]
     products = doc["products"]
 
-    tiles = "".join(tile(p, aff) for p in products)
+    tiles = "".join(tile(p, aff, i) for i, p in enumerate(products))
     chips = "".join(
         '\n        <button type="button" class="chip" data-filter="%s" aria-pressed="%s">%s</button>'
         % (c["id"], "true" if c["id"] == "all" else "false", html.escape(c["label"]))
@@ -141,7 +148,7 @@ def main():
     with io.open(PAGE, encoding="utf-8") as fh:
         src = fh.read()
     out = re.sub(r'<main id="main">.*?</main>\n', main_html, src, flags=re.S)
-    if out == src or out.count('<main id="main">') != 1:
+    if out.count('<main id="main">') != 1 or '<main id="main">' not in src:
         sys.exit("ERROR: could not replace <main> in index.html")
     with io.open(PAGE, "w", encoding="utf-8") as fh:
         fh.write(out)
@@ -155,7 +162,7 @@ def main():
 MAIN_TEMPLATE = """<main id="main">
   <div class="market-disclosure">
     <div class="wrap">
-      Every product here was reviewed before it was listed. We don’t sell anything — every check-price link goes to Amazon, and we may earn a commission at no extra cost to you. <a href="/about.html">How we work</a>
+      <strong>As an Amazon Associate I earn from qualifying purchases.</strong> Every product here has a written verdict before it’s listed. We don’t sell anything — every check-price link goes to Amazon. <a href="/about.html">How we work</a>
     </div>
   </div>
 
@@ -178,6 +185,7 @@ MAIN_TEMPLATE = """<main id="main">
   <div class="wrap market">
     <div>
       <h2 class="vh">Reviewed products</h2>
+      <p class="grid-note">“Check price on Amazon” buttons are affiliate links: we may earn a commission, at no extra cost to you. No prices here — Amazon shows the current one.</p>
       <div class="masonry" id="masonry">
 %(tiles)s      </div>
       <p class="market-empty" id="market-empty" hidden>Nothing in that category yet.</p>

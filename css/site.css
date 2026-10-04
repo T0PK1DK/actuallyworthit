@@ -1420,3 +1420,171 @@ footer.site strong { color: var(--ink); font-weight: 600; }
   .flag { font-size: 0.5rem; max-width: 42%; padding: 0.2rem 0.38rem; }
   .worth-mini { height: 1rem; }
 }
+
+/* ============================================================
+   Image-free product art (no Amazon or manufacturer photos)
+   Typographic card: brand, model mark, hand-drawn category icon,
+   tinted per category. Used by homepage tiles and review pages.
+   ============================================================ */
+.art-phones     { --art-bg: #e4e8ef; --art-ink: #2c3a52; }
+.art-watches    { --art-bg: #efe6d8; --art-ink: #5a4426; }
+.art-earbuds    { --art-bg: #dfeae7; --art-ink: #0d4f48; }
+.art-headphones { --art-bg: #e9e2ec; --art-ink: #4a3556; }
+.art-speakers   { --art-bg: #f2e2d9; --art-ink: #7a3b22; }
+.art-gps        { --art-bg: #e4e9d9; --art-ink: #3f4f22; }
+
+.tile-art,
+.shot-art {
+  position: relative;
+  overflow: hidden;
+  container-type: inline-size;
+  color: var(--art-ink, var(--ink));
+  background-color: var(--art-bg, var(--photo));
+  background-image:
+    radial-gradient(120% 90% at 0% 0%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 60%),
+    radial-gradient(currentColor 0.6px, transparent 0.7px);
+  background-size: auto, 14px 14px;
+  background-blend-mode: normal;
+}
+/* soften the dot grid: it is drawn in currentColor, so knock it back */
+.tile-art::before,
+.shot-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--art-bg, var(--photo));
+  opacity: 0.86;
+  pointer-events: none;
+}
+.art-card,
+.shot-art {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.art-card {
+  position: absolute;
+  inset: 0;
+  padding: 2.6rem 0.95rem 0.9rem;
+}
+.art-card > *,
+.shot-art > * { position: relative; }
+.art-mark {
+  position: absolute !important;
+  right: -9%;
+  top: 14%;
+  width: 62%;
+  opacity: 0.16;
+  pointer-events: none;
+}
+.art-mark .cat-icon { width: 100%; height: auto; stroke-width: 1.1; }
+.art-brand {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.78;
+  margin-bottom: 0.15rem;
+}
+.art-mono {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.35rem, 17cqi, 2.9rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+.art-cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.art-cat .cat-icon { width: 1rem; height: 1rem; flex: 0 0 auto; }
+
+/* homepage tile art: the aspect-ratio comes from the generator and varies
+   per tile so the masonry keeps its rhythm without photos */
+.tile-art { width: 100%; min-width: 0; border-bottom: 1px solid var(--line-soft); }
+
+/* review-page hero art (replaces .product-shot / .product-pair photos) */
+.shot-art {
+  min-height: 11.25rem;
+  padding: 1.1rem 1.2rem 1rem;
+}
+.shot-art .art-mono { font-size: clamp(1.8rem, 11cqi, 3.2rem); }
+.shot-art .art-mark { width: 40%; top: 8%; right: -4%; }
+@media (min-width: 720px) {
+  .shot-art { min-height: 14rem; }
+}
+
+/* small square where buy-box thumbnails used to be */
+.art-thumb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 0.45rem;
+  color: var(--art-ink);
+  background: var(--art-bg);
+}
+.art-thumb .cat-icon { width: 55%; height: 55%; }
+.art-thumb.buy-thumb { width: 5.5rem; height: 5.5rem; border-radius: 0.55rem; }
+
+/* sitewide Amazon Associates banner (same look as the homepage bar) */
+.site-disclosure .wrap { padding-block: 0.55rem; }
+.market-disclosure strong { font-weight: 600; }
+
+/* short disclosure line directly above the product grid */
+.grid-note {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: var(--ink-muted);
+  margin: 0 0 1rem;
+  padding: 0.5rem 0.7rem;
+  border-left: 2px solid var(--accent);
+  background: var(--card);
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+
+/* masonry hardening: tiles never split across columns (Safari/Firefox),
+   hidden tiles really disappear, and nothing pokes out of a column */
+.masonry { column-fill: balance; }
+.tile {
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  page-break-inside: avoid;
+}
+.tile[hidden] { display: none; }
+.tile-name, .tile-dek, .tile-src { overflow-wrap: anywhere; }
+
+/* iPhone-width columns (~160px): keep the CTA on one or two tidy lines */
+@media (max-width: 30rem) {
+  .masonry { column-gap: 0.75rem; }
+  .tile { margin-bottom: 0.75rem; }
+  .tile-body { padding: 0.7rem 0.7rem 0.8rem; }
+  .tile-name { font-size: 0.95rem; }
+  .tile-dek { font-size: 0.82rem; }
+  .tile-cta { font-size: 0.72rem; line-height: 1.2; text-align: center; padding: 0.5rem 0.45rem; }
+  .art-card { padding: 2.3rem 0.7rem 0.7rem; }
+  .art-cat { font-size: 0.56rem; }
+}
+/* the grid track must never grow to the masonry's min-content width */
+.market { grid-template-columns: minmax(0, 1fr); }
+.market > * { min-width: 0; }
+@media (min-width: 68rem) {
+  .market { grid-template-columns: minmax(0, 1fr) 17.5rem; }
+}
+/* tablets: three columns from 44rem so photo-free tiles don't get tall */
+@media (min-width: 44rem) { .masonry { columns: 3; } }

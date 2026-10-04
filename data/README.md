@@ -28,15 +28,15 @@ real ASIN in and rebuild — that is the whole change.
 
 | Field | What it does |
 |---|---|
-| `id` | Slug. Must match the image filename: `/img/products/<id>.jpg` |
+| `id` | Slug, unique per product |
 | `name` | Shown on the tile |
+| `brand` / `mono` | Brand line and short model mark drawn on the tile’s image-free art card (e.g. `Sony` / `XM5`) |
 | `asin` | Amazon ASIN, or `null` if there is no confirmed listing |
 | `condition` | `new` or `renewed`. `renewed` puts a **Renewed** flag on the image |
 | `category` | Must match a `categories[].id` — drives the filter chips |
 | `verdict` | `WORTH IT` or `DEPENDS`. Picks Worth's pose and the pill colour |
 | `evidence` | Evidence grade shown on the tile. Currently `Sourced` everywhere |
 | `dek` | One or two sentences under the product name |
-| `image` / `alt` | Product shot and its alt text |
 | `review` | `href` and `label` of the review that covers this product |
 
 ## How the link is built
@@ -44,13 +44,34 @@ real ASIN in and rebuild — that is the whole change.
 From `affiliate.url_template`:
 
 ```
-https://www.amazon.com/dp/{asin}?tag={tag}&linkCode={link_code}
+https://www.amazon.com/dp/{asin}/ref=nosim?tag={tag}
 ```
 
-That is the SiteStripe deep-link form — it opens the product page directly, with
-the associate tag attached. Every generated link also carries
-`rel="sponsored nofollow noopener"`, which is what Google expects on affiliate
-links.
+That is the simple text-link format Amazon documents for hand-built links in
+Associates Central help (“How do I build a simple text link to a specific item
+on Amazon?”). It is **not** SiteStripe output: real SiteStripe links for this
+account look like `…/dp/<ASIN>?th=1&linkCode=ll2&tag=…&linkId=…`. We
+deliberately do not hand-add a `linkCode` (an earlier version appended
+`linkCode=ll1` and wrongly called that the SiteStripe form; Amazon publishes no
+definition of `linkCode`). The `tag` parameter is what Amazon documents for
+attribution. Spot-check a few links with the Link Checker in Associates
+Central after any change to this template.
+
+Every generated link also carries `rel="sponsored nofollow noopener"`, which is
+what Google expects on affiliate links, and the visible text is always
+“Check price on Amazon” — never “Buy now” or “Add to cart”.
+
+## No product images, no prices
+
+Tiles and review pages do not show product photos. Amazon listing images may
+not be downloaded and self-hosted (Associates IP License), and manufacturer
+press images need the vendor’s written permission to sit next to an affiliate
+link. Each product is drawn as a typographic card instead (`tools/art.py`).
+
+Tiles never show a price. Review pages may show a manufacturer MSRP only when it
+is labelled as MSRP, dated to its source, and not next to a buy button.
+`check-links.py` fails if a self-hosted product image, an Amazon image URL, or a
+dollar figure in a tile or buy box comes back.
 
 Change `affiliate.tag` here and every link on the homepage updates on the next
 build.
