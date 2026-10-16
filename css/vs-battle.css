@@ -1,0 +1,367 @@
+/*
+  VS Battle — reusable comparison "matchup" component.
+  Markup: section.vs-battle > .vs-head, .vs-arena (2× .vs-fighter + .vs-mark + optional .vs-ref),
+  ol.vs-rounds > li.vs-round[data-winner="a|b|tie"], .vs-pc, .vs-verdict, disclosure, .vs-cta.
+  Theme per page by overriding --vs-a / --vs-b on .vs-battle (e.g. style="--vs-a:#6b2737").
+  Mobile-first; relies on tokens from site.css (--ink, --line, --card, --sans, --display, --radius).
+*/
+.vs-battle {
+  --vs-a: #7a2e3b;          /* P1 colour */
+  --vs-b: #c4621d;          /* P2 colour */
+  --vs-tie: #6e746c;
+  --vs-arena: #161615;
+  --vs-gold: #f2c14e;
+  margin: 2.25rem 0 2rem;
+  font-family: var(--sans);
+}
+
+/* Header */
+.vs-head { margin: 0 0 0.85rem; }
+.vs-kicker {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 0 0 0.35rem;
+}
+.review .vs-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.45rem, 6.2vw, 2rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.vs-badge {
+  display: inline-block;
+  vertical-align: 0.2em;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 0.28rem 0.6rem 0.26rem;
+  border-radius: 0.3rem;
+  transform: skewX(-8deg);
+  white-space: nowrap;
+}
+.vs-badge--depends { background: var(--v-depends, #8a5a12); color: #fff; }
+.vs-badge--worth   { background: var(--v-worth, #1f5c3d); color: #fff; }
+.vs-badge--skip    { background: var(--v-skip, #8f2f28); color: #fff; }
+
+/* Arena: fighter cards face off */
+.vs-arena {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  padding: 1.1rem 0.7rem 0.8rem;
+  border-radius: calc(var(--radius) + 0.15rem);
+  background:
+    linear-gradient(115deg, color-mix(in srgb, var(--vs-a) 55%, transparent) 0 49.6%, transparent 49.6% 50.4%, color-mix(in srgb, var(--vs-b) 55%, transparent) 50.4%),
+    var(--vs-arena);
+  overflow: hidden;
+  isolation: isolate;
+}
+.vs-arena::after {           /* floor glow */
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 35%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.45));
+  z-index: -1;
+}
+.vs-fighter {
+  position: relative;
+  margin: 0;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+  border: 2px solid var(--vs-side);
+}
+.vs-fighter--a { --vs-side: var(--vs-a); transform: rotate(-2.5deg); }
+.vs-fighter--b { --vs-side: var(--vs-b); transform: rotate(2.5deg); }
+.vs-fighter img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.vs-side {
+  position: absolute;
+  top: 0.4rem;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background: var(--vs-side);
+  padding: 0.12rem 0.42rem;
+  border-radius: 0.25rem;
+}
+.vs-fighter--a .vs-side { left: 0.4rem; }
+.vs-fighter--b .vs-side { right: 0.4rem; }
+.vs-plate {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  padding: 1.6rem 0.55rem 0.5rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.82) 55%);
+  color: #fff;
+  line-height: 1.15;
+}
+.vs-fighter--b .vs-plate { text-align: right; }
+.vs-plate-name { font-weight: 700; font-size: 0.86rem; }
+.vs-plate-tally {
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+.vs-plate-tally b { color: var(--vs-gold); font-size: 0.9rem; }
+
+.vs-mark {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  background: var(--vs-gold);
+  border: 3px solid var(--vs-arena);
+  box-shadow: 0 0 0 3px var(--vs-gold), 0 8px 18px rgba(0, 0, 0, 0.45);
+}
+.vs-mark span {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.55rem;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--vs-arena);
+}
+
+/* Referee: small mascot in the corner */
+.vs-ref {
+  position: absolute;
+  left: 50%;
+  top: 0.3rem;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 3.1rem;
+}
+.vs-ref img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  background: #f1efe9;
+}
+.vs-ref-tag {
+  position: absolute;
+  left: 50%;
+  bottom: -0.2rem;
+  transform: translateX(-50%);
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--vs-arena);
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0 0.3rem;
+  border-radius: 0.2rem;
+  /* black/white stripes = referee shirt */
+  background-image: repeating-linear-gradient(90deg, #141210 0 3px, #2d2a26 3px 6px);
+}
+.vs-credit {
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  margin: 0.4rem 0 1rem !important;
+}
+
+/* Rounds */
+.vs-rounds {
+  list-style: none;
+  margin: 0 0 1.25rem !important;
+  padding: 0 !important;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  overflow: hidden;
+}
+.vs-round {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 0.75rem;
+  margin: 0 !important;
+  padding: 0.8rem 0.85rem 0.8rem 1rem;
+  position: relative;
+}
+.vs-round + .vs-round { border-top: 1px solid var(--line); }
+.vs-round::before {          /* winner stripe */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--vs-tie);
+}
+.vs-round[data-winner="a"]::before { background: var(--vs-a); }
+.vs-round[data-winner="b"]::before { background: var(--vs-b); }
+.vs-round-head {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.vs-round-no {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.vs-round-name { font-weight: 700; font-size: 0.95rem; }
+.vs-round p {
+  font-family: var(--serif);
+  font-size: 0.98rem;
+  line-height: 1.45;
+  margin: 0 !important;
+}
+.vs-chip {
+  margin-left: auto;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.vs-chip::before { content: "★ "; }
+.vs-chip--a { background: var(--vs-a); }
+.vs-chip--b { background: var(--vs-b); }
+.vs-chip--tie { background: var(--vs-tie); }
+.vs-chip--tie::before { content: "= "; }
+.vs-round .vs-score {
+  align-self: end;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.vs-score-pips { display: inline-flex; gap: 0.2rem; align-items: center; }
+.vs-score-a, .vs-score-b {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 0.25rem;
+  color: #fff;
+}
+.vs-score-a { background: var(--vs-a); }
+.vs-score-b { background: var(--vs-b); }
+.vs-score-sep { color: var(--ink-muted); }
+
+/* Pros / cons */
+.vs-pc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin: 0 0 1.25rem;
+}
+.vs-pc-col {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--vs-side);
+  border-radius: var(--radius);
+  padding: 0.75rem 0.75rem 0.4rem;
+  min-width: 0;
+}
+.vs-pc-col--a { --vs-side: var(--vs-a); }
+.vs-pc-col--b { --vs-side: var(--vs-b); }
+.vs-pc-col h3 { font-size: 0.92rem; margin: 0 0 0.45rem; letter-spacing: -0.01em; }
+.vs-pc-label {
+  font-size: 0.6rem !important;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 0.25rem !important;
+}
+.vs-pc-label--pro { color: var(--v-worth, #1f5c3d); }
+.vs-pc-label--con { color: var(--v-skip, #8f2f28); }
+.review .vs-list { list-style: none; padding: 0; margin: 0 0 0.7rem; }
+.vs-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+.review .vs-list li + li { margin-top: 0.3rem; }
+.vs-list li::first-letter { text-transform: uppercase; }
+.vs-list li::before {
+  position: absolute;
+  left: 0;
+  font-weight: 800;
+}
+.vs-list--pro li::before { content: "+"; color: var(--v-worth, #1f5c3d); }
+.vs-list--con li::before { content: "−"; color: var(--v-skip, #8f2f28); }
+
+/* Verdict */
+.vs-verdict {
+  background: var(--vs-arena);
+  color: var(--hero-ink, #f4efe6);
+  border-radius: var(--radius);
+  padding: 0.95rem 1rem 0.85rem;
+  margin: 0 0 1rem;
+}
+.review .vs-verdict-head { display: flex; align-items: center; justify-content: space-between; margin: 0 0 0.6rem; }
+.vs-verdict .vs-kicker { color: #c9c0b3; margin: 0; }
+.review .vs-pick {
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.45;
+  margin: 0 0 0.55rem;
+  padding-left: 0.7rem;
+  border-left: 3px solid var(--vs-side);
+}
+.vs-pick--a { --vs-side: var(--vs-a); }
+.vs-pick--b { --vs-side: var(--vs-b); }
+.vs-pick strong { font-family: var(--sans); }
+.review .vs-fine { font-size: 0.76rem; color: #c9c0b3; margin: 0.7rem 0 0; }
+
+/* Disclosure + CTA */
+.review .vs-disclosure { margin: 0 0 0.65rem; font-size: 0.8rem; }
+.vs-cta { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.vs-cta .btn { flex: 1 1 10rem; }
+.review .vs-cta-note { margin: 0.45rem 0 0; }
+
+/* Wider screens: more room in the arena */
+@media (min-width: 44rem) {
+  .vs-arena { gap: 2.4rem; padding: 1.5rem 1.4rem 1.1rem; }
+  .vs-mark { width: 4.6rem; height: 4.6rem; }
+  .vs-mark span { font-size: 2rem; }
+  .vs-plate-name { font-size: 1rem; }
+  .vs-ref { top: 0.45rem; width: 3.8rem; }
+  .vs-round { padding: 0.9rem 1.1rem 0.9rem 1.25rem; }
+  .vs-pc { gap: 0.9rem; }
+  .vs-pc-col { padding: 0.95rem 1rem 0.5rem; }
+  .vs-list li { font-size: 0.92rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .vs-mark { animation: vs-pop 0.5s cubic-bezier(.2, 1.6, .4, 1) both; }
+  @keyframes vs-pop {
+    from { transform: translate(-50%, -50%) rotate(-8deg) scale(0.4); opacity: 0; }
+  }
+}
